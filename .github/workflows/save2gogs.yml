@@ -1,0 +1,17 @@
+name: synchronize to gogs
+
+on: [push,workflow_dispatch]
+
+jobs:
+  to_gogs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: yesolutions/mirror-action@master
+        with:
+          REMOTE: ${{  secrets.GOGS_REPO_URL  }}
+          GIT_USERNAME: ${{  secrets.GOGS_USERNAME  }}
+          GIT_PASSWORD: ${{  secrets.GOGS_PASSWORD  }}
