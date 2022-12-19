@@ -1658,6 +1658,7 @@ class Api {
      * 验证订阅是否存在
      */
     public function is_subscribe() {
+        return TRUE;
         //获取订阅SESSION状态
         session_start();
         //获取session订阅状态
@@ -1718,6 +1719,7 @@ class Api {
      * name:验证订阅，订阅不存在，则阻止
      */
     public function check_is_subscribe(){
+        return TRUE;
         $result = $this->is_subscribe();
 
         if( $result === FALSE ) {

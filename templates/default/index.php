@@ -15,6 +15,20 @@
 	<script src = 'static/mdui/js/mdui.min.js'></script>
 	<?php echo $site['custom_header']; ?>
 	<style>
+        body {
+            background: url(
+        <?php
+            $today_wallpaper_url = 'https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&ensearch=0&mkt=zh-cn';
+            $base_url = 'https://cn.bing.com';
+            $json_object = json_decode(file_get_contents($today_wallpaper_url));
+            $today = $base_url . $json_object->images[0]->urlbase."_UHD.jpg";
+            echo $today;
+        ?>
+        ) no-repeat center center; /*加载背景图*/ /* 背景图不平铺 */
+            background-size: cover; /* 让背景图基于容器大小伸缩 */
+            background-attachment: fixed; /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+            background-color: #CCCCCC; /* 设置背景颜色，背景图加载过程中会显示背景色 */
+        }
 	<?php if( $theme_config->link_description == "hide" ) { ?>
 		.link-content{
 			display:none;
@@ -53,15 +67,6 @@
 				</div>
 			</div>
 			<!-- 新版搜索框END -->
-		  <a class = "mdui-hidden-xs" href="https://github.com/helloxz/onenav" rel = "nofollow" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '查看 Github'}">
-      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon" style="width: 24px;height:24px;">
-        <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
-	c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
-	c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
-	c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
-	c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5
-	c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C34.3,8.7,27,1.4,18,1.4z"></path>
-	  </svg>
 	  <?php
 		if( is_login() ) {
 	  ?>	
@@ -162,6 +167,18 @@
 	  </ul>
 	</div>
 	<!--左侧抽屉导航END-->
+
+    <!--顶部时钟-->
+    <div class="clock" style="margin-top: 88px;">
+        <div id="Date">Thursday 6 Oct. 2022</div>
+        <ul class="clockUl">
+            <li id="hours" class="clockLi">08</li>
+            <li id="point">:</li>
+            <li id="min" class="clockLi">25</li>
+            <li id="point">:</li>
+            <li id="sec" class="clockLi">00</li>
+        </ul>
+    </div>
 
 	<!--正文内容部分-->
 	<div class="<?php echo ( $theme_config->full_width_mode == "off") ? "mdui-container" : "mdui-container-fluid"; ?>">
@@ -271,5 +288,38 @@
 <script src="templates/<?php echo $template; ?>/static/embed.js?v=<?php echo $version; ?>"></script>
 <script>
 <?php echo $onenav['right_menu']; ?>
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        const monthNames = ["Jan.", "Feb.", "Mar.", "Apr.", "May.", "Jun.", "Jul.", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
+        const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        var newDate = new Date();
+        newDate.setDate(newDate.getDate());
+        $('#Date').html(dayNames[newDate.getDay()] + " " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
+
+        setInterval( function() {
+            // Create a newDate() object and extract the seconds of the current time on the visitor's
+            var seconds = new Date().getSeconds();
+            // Add a leading zero to seconds value
+            $("#sec").html(( seconds < 10 ? "0" : "" ) + seconds);
+        },1000);
+
+        setInterval( function() {
+            // Create a newDate() object and extract the minutes of the current time on the visitor's
+            var minutes = new Date().getMinutes();
+            // Add a leading zero to the minutes value
+            $("#min").html(( minutes < 10 ? "0" : "" ) + minutes);
+        },1000);
+
+        setInterval( function() {
+            // Create a newDate() object and extract the hours of the current time on the visitor's
+            var hours = new Date().getHours();
+            // Add a leading zero to the hours value
+            $("#hours").html(( hours < 10 ? "0" : "" ) + hours);
+        }, 1000);
+
+    });
 </script>
 </html>
