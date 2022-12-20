@@ -8,11 +8,11 @@
 	<meta name="keywords" content="<?php echo $site['keywords']; ?>" />
 	<meta name="description" content="<?php echo $site['description']; ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel='stylesheet' href='static/mdui/css/mdui.css'>
-	<link rel='stylesheet' href='static/jQuery-contextMenu/jquery.contextMenu.min.css'>
-	<link rel="stylesheet" href="static/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel='stylesheet' href='https://libs.xiaoz.top/mdui/v1.0.1/css/mdui.min.css'>
+    <link rel='stylesheet' href='https://libs.xiaoz.top/jQuery-contextMenu/2.9.2/jquery.contextMenu.min.css'>
+    <link rel="stylesheet" href="https://libs.xiaoz.top/font-awesome/4.7.0/css/font-awesome.css">
 	<link rel="stylesheet" href="templates/<?php echo $template; ?>/static/style.css?v=<?php echo $version; ?>">
-	<script src = 'static/mdui/js/mdui.min.js'></script>
+    <script src = 'https://libs.xiaoz.top/mdui/v1.0.1/js/mdui.min.js'></script>
 	<?php echo $site['custom_header']; ?>
 	<style>
         body {
@@ -279,10 +279,10 @@
 	<!-- footerend -->
 	
 </body>
-<script src = 'static/js/jquery.min.js'></script>
+<script src = 'https://libs.xiaoz.top/jquery/2.2.4/jquery.min.js'></script>
 <script src="static/layer/layer.js"></script>
-<script src = 'static/jQuery-contextMenu/jquery.contextMenu.min.js'></script>
-<script src = 'static/js/clipBoard.min.js'></script>
+<script src = 'https://libs.xiaoz.top/jQuery-contextMenu/2.9.2/jquery.contextMenu.min.js'></script>
+<script src = 'https://libs.xiaoz.top/clipBoard.js/clipBoard.min.js'></script>
 <script src = 'static/js/qrcode.min.js'></script>
 <script src = "templates/<?php echo $template; ?>/static/holmes.js"></script>
 <script src="templates/<?php echo $template; ?>/static/embed.js?v=<?php echo $version; ?>"></script>
