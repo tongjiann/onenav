@@ -384,7 +384,7 @@ class Api {
     /**
      * 批量导入链接并自动创建分类，这是新的导入接口
      */
-    public function import_link($filename,$property = 0) {
+    public function import_link($filename,$property = 1) {
         //过滤$filename
         $filename = str_replace('../','',$filename);
         $filename = str_replace('./','',$filename);
