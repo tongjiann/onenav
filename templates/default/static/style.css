@@ -317,6 +317,11 @@ body.mdui-loaded .mdui-drawer {
     text-shadow: 0 0 5px #00c6ff;
 }
 
+.wallpaper{
+    display: inline;
+    opacity: 20%;
+}
+
 #point {
     position: relative;
     -moz-animation: mymove 1s ease infinite;
