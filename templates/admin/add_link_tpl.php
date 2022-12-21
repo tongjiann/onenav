@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>OneNav后台管理</title>
-  <link rel='stylesheet' href='https://libs.xiaoz.top/layui/v2.5.4/css/layui.css'>
+  <link rel='stylesheet' href='https://github.com/tongjiann/staticResource/layui@v2.5.4/css/layui.css'>
   <link rel='stylesheet' href='templates/admin/static/style.css'>
 </head>
 <body>

@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="zh-ch" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <?php $resourceBaseUrl = "https://tongjiann.github.io/staticResource" ?>
 	<meta charset="utf-8" />
 	<title><?php echo $site['title']; ?> - <?php echo $site['subtitle']; ?></title>
-	<meta name="generator" content="EverEdit" />
-	<meta name="author" content="xiaoz<www.xiaoz.me>" />
 	<meta name="keywords" content="<?php echo $site['keywords']; ?>" />
 	<meta name="description" content="<?php echo $site['description']; ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='https://libs.xiaoz.top/mdui/v1.0.1/css/mdui.min.css'>
-    <link rel='stylesheet' href='https://libs.xiaoz.top/jQuery-contextMenu/2.9.2/jquery.contextMenu.min.css'>
-    <link rel="stylesheet" href="https://libs.xiaoz.top/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel='stylesheet' href='<?php echo $resourceBaseUrl ?>/mdui@v1.0.1/css/mdui.min.css'>
+    <link rel='stylesheet' href='<?php echo $resourceBaseUrl ?>/jQuery-contextMenu@2.9.2/jquery.contextMenu.min.css'>
+    <link rel="stylesheet" href="<?php echo $resourceBaseUrl ?>/font-awesome@4.7.0/css/font-awesome.css">
 	<link rel="stylesheet" href="templates/<?php echo $template; ?>/static/style.css?v=<?php echo $version; ?>">
-    <script src = 'https://libs.xiaoz.top/mdui/v1.0.1/js/mdui.min.js'></script>
+    <script src = '<?php echo $resourceBaseUrl ?>/mdui@v1.0.1/js/mdui.min.js'></script>
 	<?php echo $site['custom_header']; ?>
 	<style>
         body {
@@ -69,7 +68,7 @@
 			<!-- 新版搜索框END -->
 	  <?php
 		if( is_login() ) {
-	  ?>	
+	  ?>
 	  <a class = "mdui-hidden-xs" href="/index.php?c=admin" title = "后台管理" target="_blank" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">account_circle</i></a>
 	  <?php }else{ ?>
 		<a class = "mdui-hidden-xs" href="/index.php?c=login" title = "登录OneNav" target="_blank" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">account_circle</i></a>
@@ -82,7 +81,7 @@
 	<!-- 添加按钮 -->
 	<?php
 		if( is_login() ) {
-	?>	
+	?>
 	<div class="right-button mdui-hidden-xs" style="position: fixed;right:10px;bottom:80px;z-index:1000;">
 		<div>
 		<button title = "快速添加链接" id = "add" class="mdui-fab mdui-color-theme-accent mdui-ripple mdui-fab-mini"><i class="mdui-icon material-icons">add</i></button>
@@ -141,7 +140,7 @@
 		<!-- 华丽的分割线 -->
 		<div class="mdui-divider"></div>
 		<!-- 华丽的分割线END -->
-		
+
 		<?php
 			if ( !is_login() ) {
 		?>
@@ -248,7 +247,7 @@
 										<?php }else{ ?>
 											<img src="/index.php?c=ico&text=<?php echo $link['title']; ?>" alt="" width="16" height="16" />
 										<?php } ?>
-										<span class="link_title"><?php echo $link['title']; ?></span> 
+										<span class="link_title"><?php echo $link['title']; ?></span>
 									</div>
 							</div>
 					<!-- 卡片的内容end -->
@@ -263,7 +262,7 @@
 		</div>
 		<!-- row end -->
 
-		
+
 	</div>
 	<div class="mdui-divider"></div>
 	<!--正文内容部分END-->
@@ -277,12 +276,12 @@
 		} ?>
 	</footer>
 	<!-- footerend -->
-	
+
 </body>
-<script src = 'https://libs.xiaoz.top/jquery/2.2.4/jquery.min.js'></script>
+<script src = '<?php echo $resourceBaseUrl ?>/jquery@2.2.4/jquery.min.js'></script>
 <script src="static/layer/layer.js"></script>
-<script src = 'https://libs.xiaoz.top/jQuery-contextMenu/2.9.2/jquery.contextMenu.min.js'></script>
-<script src = 'https://libs.xiaoz.top/clipBoard.js/clipBoard.min.js'></script>
+<script src = '<?php echo $resourceBaseUrl ?>/jQuery-contextMenu@2.9.2/jquery.contextMenu.min.js'></script>
+<script src = '<?php echo $resourceBaseUrl ?>/clipBoard.js/clipBoard.min.js'></script>
 <script src = 'static/js/qrcode.min.js'></script>
 <script src = "templates/<?php echo $template; ?>/static/holmes.js"></script>
 <script src="templates/<?php echo $template; ?>/static/embed.js?v=<?php echo $version; ?>"></script>
