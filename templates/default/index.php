@@ -408,7 +408,7 @@ if (is_login()) {
         }
         str += window.wpurl;
         str += ") no-repeat center center; background-size: cover; background-attachment: fixed; background-color: #CCCCCC;}";
-        elementsByTagNameElement.setHTML(str);
+        elementsByTagNameElement.innerHTML = str;
 
     }
 </script>
