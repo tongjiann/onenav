@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-ch" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <?php $resourceBaseUrl = "https://tongjiann.github.io/staticResource" ?>
-    <meta charset="utf-8"/>
-    <title><?php echo $site['title']; ?> - <?php echo $site['subtitle']; ?></title>
-    <meta name="keywords" content="<?php echo $site['keywords']; ?>"/>
-    <meta name="description" content="<?php echo $site['description']; ?>"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='<?php echo $resourceBaseUrl ?>/mdui@v1.0.1/css/mdui.min.css'>
-    <link rel='stylesheet' href='<?php echo $resourceBaseUrl ?>/jQuery-contextMenu@2.9.2/jquery.contextMenu.min.css'>
-    <link rel="stylesheet" href="<?php echo $resourceBaseUrl ?>/font-awesome@4.7.0/css/font-awesome.css">
-    <link rel="stylesheet" href="templates/<?php echo $template; ?>/static/style.css?v=<?php echo $version; ?>">
-    <script src='<?php echo $resourceBaseUrl ?>/mdui@v1.0.1/js/mdui.min.js'></script>
-    <?php echo $site['custom_header']; ?>
+	<meta charset="utf-8" />
+	<title><?php echo $site['title']; ?> - <?php echo $site['subtitle']; ?></title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="xiaoz<www.xiaoz.me>" />
+	<meta name="keywords" content="<?php echo $site['keywords']; ?>" />
+	<meta name="description" content="<?php echo $site['description']; ?>" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='stylesheet' href='static/mdui/css/mdui.css'>
+	<link rel='stylesheet' href='static/jQuery-contextMenu/jquery.contextMenu.min.css'>
+	<link rel="stylesheet" href="static/font-awesome/4.7.0/css/font-awesome.css">
+	<link rel="stylesheet" href="templates/<?php echo $template; ?>/static/style.css?v=<?php echo $version; ?>">
+	<script src = 'static/mdui/js/mdui.min.js'></script>
+	<?php echo $site['custom_header']; ?>
     <style>
         body {
             background: url(
